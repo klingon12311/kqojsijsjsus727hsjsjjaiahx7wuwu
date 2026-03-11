@@ -1,9 +1,6 @@
 CMD RUN BOT
 ```
-git clone https://github.com/klingon12311/userbotdidinv1
-```
-```
-klingon12311 
+git clone https://github.com/klingon12311/kqojsijsjsus727hsjsjjaiahx7wuwu ubot
 ```
 ```
 sudo apt update && sudo apt upgrade -y
@@ -12,16 +9,16 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install python3.10-venv ffmpeg -y
 ```
 ```
-cd userbotdidinv1
+cd ubot
 ```
 ```
-screen -S userbotdidinv1
+screen -R ubot
 ```
 ```
-python3 -m venv didin
+python3 -m venv ubot
 ```
 ```
-source didin/bin/activate
+source ubot/bin/activate
 ```
 ```
 pip install --no-cache-dir -r requirements.txt
@@ -30,7 +27,7 @@ pip install --no-cache-dir -r requirements.txt
 cp sample.env .env
 ```
 ```
-nano .env (isi varsnya, ctrl + s buat save, ctrl + x buat exit nano)
+nano .env
 ```
 ```
 bash start
