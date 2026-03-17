@@ -8,7 +8,7 @@ __HELP__ = f"""
 <b>『 bantuan untuk gcastnew 』</b>
 
   <b>• perintah:</b> <code>.bc</code> gc balas ke pesan
-  <b>• penjelasan:</b> gc[grup], adm[khusus admin], pv [private chat]
+  <b>• penjelasan:</b> gc[grup], adm[khusus admin], pv [private chat], ch [semua channel]
 
 """
 
@@ -89,5 +89,22 @@ async def _(c, m):
                 f"<emoji id =5888974760720732797>💥</emoji> **powered by ©akbarbotz1** <emoji id =5895583431194054511>🌟</emoji>\n")
 
 
+        elif m.command[1] == "ch":
+            Haku = await m.reply(f"<emoji id=6010111371251815589>⏳</emoji> **sedang memproses**...")
+            async for dialog in c.get_dialogs():
+                if dialog.chat.type == ChatType.CHANNEL:
+                    chat_id = dialog.chat.id
+                    await asyncio.sleep(0.1)
+                    if chat_id not in blacklist:
+                        try:
+                            await send.copy(chat_id)
+                            done += 1
+                        except Exception:
+                            pass
+
+            await Haku.edit(
+                f"<emoji id =5888974760720732797>💥</emoji> **berhasil mengirim ke {done} channel** <emoji id=5798623990436074786>✅</emoji>\n\n"
+                f"<emoji id =5888974760720732797>💥</emoji> **powered by ©akbarbotz1** <emoji id =5895583431194054511>🌟</emoji>\n")
+
     except IndexError:
-        await m.reply(f"<emoji id =5929358014627713883>❌</emoji>**mohon gunakan bc gc/adm/pv balas ke pesan**")
+        await m.reply(f"<emoji id =5929358014627713883>❌</emoji>**mohon gunakan bc gc/adm/pv/ch balas ke pesan**")
